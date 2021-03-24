@@ -93,10 +93,13 @@ Use the higher order function getAverageGoals to do the following:
  Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
-   /* code here */
+function getAverageGoals(gfcb) {
+   const score = gfcb.reduce(function(ac, i){
+        return ac + i['Home Team Goals']
+   }, 0) // fifaData.length;
+   return score;
 }
-
+getAverageGoals(getFinals(fifaData));
 
 
 
